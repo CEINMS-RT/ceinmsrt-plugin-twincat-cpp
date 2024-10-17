@@ -1,0 +1,10 @@
+; ADSTALKERW32.def : Declares the module parameters.
+
+LIBRARY      "AdsTalkerW32.DLL"
+
+EXPORTS
+	DllCanUnloadNow      PRIVATE
+	DllGetClassObject    PRIVATE
+	DllRegisterServer    PRIVATE
+	DllUnregisterServer	 PRIVATE
+	DllGetTcCtrl		 PRIVATE

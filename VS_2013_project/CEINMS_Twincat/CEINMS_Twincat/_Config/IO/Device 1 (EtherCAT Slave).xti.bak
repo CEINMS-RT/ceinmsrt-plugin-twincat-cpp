@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmItem" TcSmVersion="1.0" TcVersion="3.1.4020.39" ClassName="CDevEtherCATSlaveDef" SubType="130">
+	<DataTypes>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-00000000003D}" TcBaseType="true" HideType="true">USINTARR6</Name>
+			<BitSize>48</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000002}">USINT</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>6</Elements>
+			</ArrayInfo>
+		</DataType>
+	</DataTypes>
+	<Device Id="1" DevType="130" AmsNetId="130.89.78.247.2.255" RemoteName="Device 1 (EtherCAT Slave)">
+		<Name>__FILENAME__</Name>
+		<AddressInfo>
+			<Ccat>
+				<Address>-515899392</Address>
+				<Offset>0</Offset>
+				<Size>12288</Size>
+				<BaseAddr>2</BaseAddr>
+				<BusNo>4</BusNo>
+				<SlotNo>2</SlotNo>
+				<VendorId>5612</VendorId>
+				<DeviceId>4352</DeviceId>
+			</Ccat>
+		</AddressInfo>
+		<Vars VarGrpType="1" InsertType="1">
+			<Name>Inputs</Name>
+			<Var>
+				<Name>PositionLeftAnkle</Name>
+				<Type>LREAL</Type>
+			</Var>
+			<Var>
+				<Name>PositionRightAnkle</Name>
+				<Type>LREAL</Type>
+				<BitOffs>64</BitOffs>
+				<ExternalAddress>8</ExternalAddress>
+			</Var>
+			<Var>
+				<Name>TorqueLeftAnkle</Name>
+				<Type>LREAL</Type>
+				<BitOffs>128</BitOffs>
+				<ExternalAddress>16</ExternalAddress>
+			</Var>
+			<Var>
+				<Name>TorqueRightAnkle</Name>
+				<Type>LREAL</Type>
+				<BitOffs>192</BitOffs>
+				<ExternalAddress>24</ExternalAddress>
+			</Var>
+		</Vars>
+		<Vars VarGrpType="2" InsertType="1">
+			<Name>Outputs</Name>
+			<Var>
+				<Name>TorqueCommandLeftAnkle</Name>
+				<Type>LREAL</Type>
+			</Var>
+			<Var>
+				<Name>TorqueCommandRightAnkle</Name>
+				<Type>LREAL</Type>
+				<BitOffs>64</BitOffs>
+				<ExternalAddress>8</ExternalAddress>
+			</Var>
+		</Vars>
+		<Vars VarGrpType="3">
+			<Name>InfoData</Name>
+			<Var>
+				<Name>State</Name>
+				<Comment>
+					<![CDATA[0x___1 = Slave is in 'INIT' state
+0x___2 = Slave is in 'PREOP' state
+0x___4 = Slave is in 'SAFEOP' state
+0x___8 = Slave is in 'OP' state]]>
+				</Comment>
+				<Type>UINT</Type>
+				<BitOffs>256</BitOffs>
+				<InOut>0</InOut>
+			</Var>
+			<Var>
+				<Name>NetId</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000003D}">USINTARR6</Type>
+				<BitOffs>272</BitOffs>
+				<InOut>0</InOut>
+			</Var>
+		</Vars>
+		<Image Id="1" AddrType="1" ImageType="2">
+			<Name>Image</Name>
+		</Image>
+		<EtherCATSlave/>
+	</Device>
+	<Mappings>
+		<OwnerA>
+			<OwnerB Name="TIXC^AdsTalker^AdsTalker_Obj1 (CAdsTalker)">
+				<Link VarA="Inputs^PositionLeftAnkle" VarB="Inputs^PositionLeftAnkle"/>
+				<Link VarA="Inputs^PositionRightAnkle" VarB="Inputs^PositionRightAnkle"/>
+				<Link VarA="Inputs^TorqueLeftAnkle" VarB="Inputs^TorqueLeftAnkle"/>
+				<Link VarA="Inputs^TorqueRightAnkle" VarB="Inputs^TorqueRightAnkle"/>
+				<Link VarA="Outputs^TorqueCommandLeftAnkle" VarB="Outputs^TorqueCommandLeftAnkle"/>
+				<Link VarA="Outputs^TorqueCommandRightAnkle" VarB="Outputs^TorqueCommandRightAnkle"/>
+			</OwnerB>
+		</OwnerA>
+	</Mappings>
+</TcSmItem>
