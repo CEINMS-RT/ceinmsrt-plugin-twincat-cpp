@@ -30,7 +30,7 @@ void PluginPositionAndTorqueTwinCat::init(int portno)
 		exit(-1);
 	if (record_)
 	{
-		logger_ = new OpenSimFileLogger<double>(outDirectory_);
+		logger_ = new CeinmsFileLogger<double>(outDirectory_);
 		logger_->addLog(Logger::IK, dofName_);
 		logger_->addLog(Logger::ID, dofName_);
 		logger_->addLogCSV("RandomSignal");

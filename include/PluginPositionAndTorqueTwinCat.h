@@ -7,7 +7,7 @@
 #include <AngleAndComsumerPlugin.h>
 #include "ExecutionXmlReader.h"
 #include <tcAdsClient.h>
-#include "OpenSimFileLogger.h"
+#include "CeinmsFileLogger.h"
 #include <GetTime.h>
 
 #include <thread>
@@ -127,7 +127,7 @@ protected:
 	tcAdsClient* client_;
 	std::vector<unsigned long> varNameVect_;
 	double timeStampEthercat_;
-	OpenSimFileLogger<double>* logger_;
+	CeinmsFileLogger<double>* logger_;
 	std::map<std::string, double> dataAngle_;
 	std::map<std::string, double> dataTorque_;
 	std::map<std::string, double> dataAngleEthercat_;
